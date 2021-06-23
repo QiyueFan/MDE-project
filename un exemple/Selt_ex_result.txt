@@ -1,0 +1,70 @@
+fanqiyuedeMacBook-Pro:2.11 un exemple fanqiyue$ selt -p -S ProductCycle.scn ProductCycle.ktz -prelude ex_terminaison.ltl 
+Selt version 3.6.0 -- 07/06/20 -- LAAS/CNRS
+ktz loaded, 70 states, 148 transitions
+0.002s
+
+- source ex_terminaison.ltl;
+operator finished : prop
+TRUE
+TRUE
+FALSE
+  state 0: L.scc*69 BackEndDev_NotStarted DevFrontEnd*2 Doc_NotStarted FrontEndDev_NotStarted GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_NotStarted ProductLauch_NotStarted Test_NotStarted UIUX_NotStarted concepteur developpeur*2 testeur
+  -Start_ProductDesign->
+  state 1: L.scc*68 BackEndDev_NotStarted DevFrontEnd*2 Doc_NotStarted FrontEndDev_NotStarted GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_InProgress ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_NotStarted developpeur*2 testeur
+  -Finish_ProductDesign->
+  state 2: L.scc*67 BackEndDev_NotStarted DevFrontEnd*2 Doc_NotStarted FrontEndDev_NotStarted GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_NotStarted concepteur developpeur*2 testeur
+  -Start_BackEndDev->
+  state 3: L.scc*53 BackEndDev_InProgress BackEndDev_Started DevFrontEnd*2 Doc_NotStarted FrontEndDev_NotStarted GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_NotStarted concepteur testeur
+  -Finish_BackEndDev->
+  state 4: L.scc*35 BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_NotStarted FrontEndDev_NotStarted GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_NotStarted concepteur developpeur*2 testeur
+  -Start_Doc->
+  state 5: L.scc*6 BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_InProgress Doc_Started FrontEndDev_NotStarted GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_NotStarted developpeur*2
+  -Start_UIUX->
+  state 6: L.scc*5 BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_InProgress Doc_Started FrontEndDev_NotStarted OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_InProgress UIUX_Started developpeur*2
+  -Finish_UIUX->
+  state 7: L.scc*2 BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_InProgress Doc_Started FrontEndDev_NotStarted GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_Finished UIUX_Started developpeur*2
+  -Start_FrontEndDev->
+  state 8: L.scc BackEndDev_Finished BackEndDev_Started Doc_InProgress Doc_Started FrontEndDev_InProgress FrontEndDev_Started GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_Finished UIUX_Started developpeur*2
+  -Finish_FrontEndDev->
+  state 9: L.dead BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_InProgress Doc_Started FrontEndDev_Finished FrontEndDev_Started GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_Finished UIUX_Started developpeur*2
+  -L.deadlock->
+  state 10: L.dead BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_InProgress Doc_Started FrontEndDev_Finished FrontEndDev_Started GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_Finished UIUX_Started developpeur*2
+  [accepting all]
+FALSE
+  state 0: L.scc*69 BackEndDev_NotStarted DevFrontEnd*2 Doc_NotStarted FrontEndDev_NotStarted GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_NotStarted ProductLauch_NotStarted Test_NotStarted UIUX_NotStarted concepteur developpeur*2 testeur
+  -Start_ProductDesign->
+  state 1: L.scc*68 BackEndDev_NotStarted DevFrontEnd*2 Doc_NotStarted FrontEndDev_NotStarted GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_InProgress ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_NotStarted developpeur*2 testeur
+  -Finish_ProductDesign->
+  state 2: L.scc*67 BackEndDev_NotStarted DevFrontEnd*2 Doc_NotStarted FrontEndDev_NotStarted GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_NotStarted concepteur developpeur*2 testeur
+  -Start_BackEndDev->
+  state 3: L.scc*53 BackEndDev_InProgress BackEndDev_Started DevFrontEnd*2 Doc_NotStarted FrontEndDev_NotStarted GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_NotStarted concepteur testeur
+  -Finish_BackEndDev->
+  state 4: L.scc*35 BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_NotStarted FrontEndDev_NotStarted GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_NotStarted concepteur developpeur*2 testeur
+  -Start_UIUX->
+  state 12: L.scc*34 BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_NotStarted FrontEndDev_NotStarted OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_InProgress UIUX_Started concepteur developpeur*2 testeur
+  -Finish_UIUX->
+  state 13: L.scc*26 BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_NotStarted FrontEndDev_NotStarted GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_Finished UIUX_Started concepteur developpeur*2 testeur
+  -Start_FrontEndDev->
+  state 14: L.scc*25 BackEndDev_Finished BackEndDev_Started Doc_NotStarted FrontEndDev_InProgress FrontEndDev_Started GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_Finished UIUX_Started concepteur developpeur*2 testeur
+  -Finish_FrontEndDev->
+  state 15: L.scc*23 BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_NotStarted FrontEndDev_Finished FrontEndDev_Started GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_NotStarted UIUX_Finished UIUX_Started concepteur developpeur*2 testeur
+  -Start_Test->
+  state 16: L.scc*22 BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_NotStarted FrontEndDev_Finished FrontEndDev_Started GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_InProgress Test_Started UIUX_Finished UIUX_Started developpeur*2
+  -Finish_Test->
+  state 17: L.scc*21 BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_NotStarted FrontEndDev_Finished FrontEndDev_Started GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_Finished Test_Started UIUX_Finished UIUX_Started concepteur developpeur*2 testeur
+  -Start_Doc->
+  state 18: L.scc*16 BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_InProgress Doc_Started FrontEndDev_Finished FrontEndDev_Started GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_Finished Test_Started UIUX_Finished UIUX_Started developpeur*2
+  -Finish_Doc->
+  state 19: L.scc*11 BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_Finished Doc_Started FrontEndDev_Finished FrontEndDev_Started GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_NotStarted Test_Finished Test_Started UIUX_Finished UIUX_Started concepteur developpeur*2 testeur
+  -Start_ProductLauch->
+  state 20: L.scc*10 BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_Finished Doc_Started FrontEndDev_Finished FrontEndDev_Started GraphicDesigner Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_InProgress ProductLauch_Started Test_Finished Test_Started UIUX_Finished UIUX_Started concepteur developpeur*2 testeur
+  -Finish_ProductLauch->
+  state 21: L.scc*9 BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_Finished Doc_Started FrontEndDev_Finished FrontEndDev_Started GraphicDesigner OpsEngineer Ops_NotStarted ProductDesign_Finished ProductDesign_Started ProductLauch_Finished ProductLauch_Started Test_Finished Test_Started UIUX_Finished UIUX_Started concepteur developpeur*2 testeur
+  -Start_Ops->
+  state 22: L.scc*8 BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_Finished Doc_Started FrontEndDev_Finished FrontEndDev_Started GraphicDesigner Ops_InProgress Ops_Started ProductDesign_Finished ProductDesign_Started ProductLauch_Finished ProductLauch_Started Test_Finished Test_Started UIUX_Finished UIUX_Started concepteur developpeur*2 testeur
+  -Finish_Ops->
+  state 23: L.scc*7 L.dead BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_Finished Doc_Started FrontEndDev_Finished FrontEndDev_Started GraphicDesigner OpsEngineer Ops_Finished Ops_Started ProductDesign_Finished ProductDesign_Started ProductLauch_Finished ProductLauch_Started Test_Finished Test_Started UIUX_Finished UIUX_Started concepteur developpeur*2 testeur
+  -L.deadlock->
+  state 24: L.scc*7 L.dead BackEndDev_Finished BackEndDev_Started DevFrontEnd*2 Doc_Finished Doc_Started FrontEndDev_Finished FrontEndDev_Started GraphicDesigner OpsEngineer Ops_Finished Ops_Started ProductDesign_Finished ProductDesign_Started ProductLauch_Finished ProductLauch_Started Test_Finished Test_Started UIUX_Finished UIUX_Started concepteur developpeur*2 testeur
+  [accepting all]
+0.005s

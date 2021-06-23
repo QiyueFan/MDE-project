@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ASCII"?>
+<petrinet:petriNetwork xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:petrinet="http://petrinet" name="simplePDL">
+  <elements xsi:type="petrinet:place" outgoings="//@elements.6" name="Conception_NotStarted" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.7" outgoings="//@elements.44 //@elements.46" name="Conception_Started"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.8" outgoings="//@elements.9" name="Conception_InProgress"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.10" outgoings="//@elements.45 //@elements.47" name="Conception_Finished"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.6" outgoings="//@elements.7 //@elements.8" name="Start_Conception"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.9" outgoings="//@elements.10" name="Finish_Conception"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.0" target="//@elements.4" name="Conception_NotStarted -> Start_Conception"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.4" target="//@elements.1" name="Start_Conception -> Conception_Started"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.4" target="//@elements.2" name="Start_Conception -> Conception_InProgress"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.2" target="//@elements.5" name="Conception_InProgress -> Finish_Conception"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.5" target="//@elements.3" name="Finish_Conception -> Conception_Finished"/>
+  <elements xsi:type="petrinet:place" outgoings="//@elements.17" name="RedactionDoc_NotStarted" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.18" name="RedactionDoc_Started"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.19" outgoings="//@elements.20" name="RedactionDoc_InProgress"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.21" name="RedactionDoc_Finished"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.17 //@elements.46" outgoings="//@elements.18 //@elements.19" name="Start_RedactionDoc"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.20 //@elements.45" outgoings="//@elements.21" name="Finish_RedactionDoc"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.11" target="//@elements.15" name="RedactionDoc_NotStarted -> Start_RedactionDoc"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.15" target="//@elements.12" name="Start_RedactionDoc -> RedactionDoc_Started"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.15" target="//@elements.13" name="Start_RedactionDoc -> RedactionDoc_InProgress"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.13" target="//@elements.16" name="RedactionDoc_InProgress -> Finish_RedactionDoc"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.16" target="//@elements.14" name="Finish_RedactionDoc -> RedactionDoc_Finished"/>
+  <elements xsi:type="petrinet:place" outgoings="//@elements.28" name="Developpement_NotStarted" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.29" name="Developpement_Started"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.30" outgoings="//@elements.31" name="Developpement_InProgress"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.32" outgoings="//@elements.48" name="Developpement_Finished"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.28 //@elements.47" outgoings="//@elements.29 //@elements.30" name="Start_Developpement"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.31" outgoings="//@elements.32" name="Finish_Developpement"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.22" target="//@elements.26" name="Developpement_NotStarted -> Start_Developpement"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.26" target="//@elements.23" name="Start_Developpement -> Developpement_Started"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.26" target="//@elements.24" name="Start_Developpement -> Developpement_InProgress"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.24" target="//@elements.27" name="Developpement_InProgress -> Finish_Developpement"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.27" target="//@elements.25" name="Finish_Developpement -> Developpement_Finished"/>
+  <elements xsi:type="petrinet:place" outgoings="//@elements.39" name="RedactionTest_NotStarted" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.40" name="RedactionTest_Started"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.41" outgoings="//@elements.42" name="RedactionTest_InProgress"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.43" name="RedactionTest_Finished"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.39 //@elements.44" outgoings="//@elements.40 //@elements.41" name="Start_RedactionTest"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.42 //@elements.48" outgoings="//@elements.43" name="Finish_RedactionTest"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.33" target="//@elements.37" name="RedactionTest_NotStarted -> Start_RedactionTest"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.37" target="//@elements.34" name="Start_RedactionTest -> RedactionTest_Started"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.37" target="//@elements.35" name="Start_RedactionTest -> RedactionTest_InProgress"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.35" target="//@elements.38" name="RedactionTest_InProgress -> Finish_RedactionTest"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.38" target="//@elements.36" name="Finish_RedactionTest -> RedactionTest_Finished"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.1" target="//@elements.37" type="readArc" name="Conception_Started -> Start_RedactionTest"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.3" target="//@elements.16" type="readArc" name="Conception_Finished -> Finish_RedactionDoc"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.1" target="//@elements.15" type="readArc" name="Conception_Started -> Start_RedactionDoc"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.3" target="//@elements.26" type="readArc" name="Conception_Finished -> Start_Developpement"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.25" target="//@elements.38" type="readArc" name="Developpement_Finished -> Finish_RedactionTest"/>
+  <elements xsi:type="petrinet:place" name="concepteur" TokenNb="3"/>
+  <elements xsi:type="petrinet:place" name="developpeur" TokenNb="2"/>
+  <elements xsi:type="petrinet:place" name="machine" TokenNb="4"/>
+  <elements xsi:type="petrinet:place" name="redacteur" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" name="testeur" TokenNb="2"/>
+</petrinet:petriNetwork>

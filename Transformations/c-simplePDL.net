@@ -1,0 +1,19 @@
+tr Start_Conception [0,w[ Conception_NotStarted concepteur*2 machine*2 -> Conception_Started Conception_InProgress
+tr Finish_Conception [0,w[ Conception_InProgress -> Conception_Finished concepteur*2 machine*2
+tr Start_RedactionDoc [0,w[ RedactionDoc_NotStarted machine redacteur Conception_Started?1 -> RedactionDoc_Started RedactionDoc_InProgress
+tr Finish_RedactionDoc [0,w[ RedactionDoc_InProgress Conception_Finished?1 -> RedactionDoc_Finished machine redacteur
+tr Start_Developpement [0,w[ Developpement_NotStarted developpeur*2 machine*3 Conception_Finished?1 -> Developpement_Started Developpement_InProgress
+tr Finish_Developpement [0,w[ Developpement_InProgress -> Developpement_Finished developpeur*2 machine*3
+tr Start_RedactionTest [0,w[ RedactionTest_NotStarted machine*2 testeur Conception_Started?1 -> RedactionTest_Started RedactionTest_InProgress
+tr Finish_RedactionTest [0,w[ RedactionTest_InProgress Developpement_Finished?1 -> RedactionTest_Finished machine*2 testeur
+pl machine (4)
+pl concepteur (3)
+pl Conception_NotStarted (1)
+pl redacteur (1)
+pl RedactionDoc_NotStarted (1)
+pl developpeur (2)
+pl Developpement_NotStarted (1)
+pl testeur (2)
+pl RedactionTest_NotStarted (1)
+net simplePDL
+

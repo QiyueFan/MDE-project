@@ -1,0 +1,32 @@
+tr Start_ProductDesign [0,w[ ProductDesign_NotStarted concepteur -> ProductDesign_Started ProductDesign_InProgress
+tr Finish_ProductDesign [0,w[ ProductDesign_InProgress -> ProductDesign_Finished concepteur
+tr Start_UIUX [0,w[ UIUX_NotStarted GraphicDesigner ProductDesign_Finished?1 -> UIUX_Started UIUX_InProgress
+tr Finish_UIUX [0,w[ UIUX_InProgress -> UIUX_Finished GraphicDesigner
+tr Start_FrontEndDev [0,w[ FrontEndDev_NotStarted DevFrontEnd*2 ProductDesign_Finished?1 UIUX_Started?1 -> FrontEndDev_Started FrontEndDev_InProgress
+tr Finish_FrontEndDev [0,w[ FrontEndDev_InProgress -> FrontEndDev_Finished DevFrontEnd*2
+tr Start_BackEndDev [0,w[ BackEndDev_NotStarted developpeur*2 ProductDesign_Finished?1 -> BackEndDev_Started BackEndDev_InProgress
+tr Finish_BackEndDev [0,w[ BackEndDev_InProgress -> BackEndDev_Finished developpeur*2
+tr Start_Test [0,w[ Test_NotStarted testeur concepteur BackEndDev_Started?1 FrontEndDev_Started?1 -> Test_Started Test_InProgress
+tr Finish_Test [0,w[ Test_InProgress BackEndDev_Finished?1 FrontEndDev_Finished?1 -> Test_Finished testeur concepteur
+tr Start_ProductLauch [0,w[ ProductLauch_NotStarted OpsEngineer Test_Finished?1 UIUX_Finished?1 -> ProductLauch_Started ProductLauch_InProgress
+tr Finish_ProductLauch [0,w[ ProductLauch_InProgress -> ProductLauch_Finished OpsEngineer
+tr Start_Doc [0,w[ Doc_NotStarted concepteur testeur ProductDesign_Started?1 -> Doc_Started Doc_InProgress
+tr Finish_Doc [0,w[ Doc_InProgress Test_Finished?1 -> Doc_Finished concepteur testeur
+tr Start_Ops [0,w[ Ops_NotStarted OpsEngineer ProductLauch_Started?1 -> Ops_Started Ops_InProgress
+tr Finish_Ops [0,w[ Ops_InProgress -> Ops_Finished OpsEngineer
+pl concepteur (1)
+pl ProductDesign_NotStarted (1)
+pl GraphicDesigner (1)
+pl UIUX_NotStarted (1)
+pl DevFrontEnd (2)
+pl FrontEndDev_NotStarted (1)
+pl developpeur (2)
+pl BackEndDev_NotStarted (1)
+pl testeur (1)
+pl Test_NotStarted (1)
+pl OpsEngineer (1)
+pl ProductLauch_NotStarted (1)
+pl Doc_NotStarted (1)
+pl Ops_NotStarted (1)
+net ProductCycle
+

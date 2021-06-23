@@ -1,0 +1,42 @@
+[comment encoding = UTF-8 /]
+[module toTINA('http://petrinet')]
+
+
+[template public toTINA(apetriNetwork : petriNetwork)]
+[comment @main/]
+[file (apetriNetwork.name.concat('.net'), false, 'UTF-8')]
+net [apetriNetwork.name/]
+[for (p : place | apetriNetwork.elements -> getPlaces())]
+	pl [p.name/] ['('/][p.TokenNb/][')'/]
+[/for]
+[for (t : Transition | apetriNetwork.elements -> getTransitions())]
+	tr [t.name/] [sourcePlace(t)/] -> [targetPlace(t)/]	 
+[/for]
+
+[/file]
+[/template]
+
+
+[query public getPlaces(elements : OrderedSet(PetriNetElement)) : OrderedSet(place) = 
+	elements->select( e | e.oclIsTypeOf(place) )
+		->collect( e | e.oclAsType(place) )
+		->asOrderedSet()
+/]
+
+[query public getTransitions(elements : OrderedSet(PetriNetElement)) : OrderedSet(Transition) =
+	elements->select( e | e.oclIsTypeOf(Transition) )
+		->collect( e | e.oclAsType(Transition))
+		->asOrderedSet()
+/]
+
+[template public sourcePlace(tr : Transition)]
+[for (arc : Arc | tr.incomings)][arc.source.name /][arc.getWeight()/] [/for]
+[/template]
+
+[template public targetPlace(tr : Transition)]
+[for (arc : Arc |tr.outgoings)][arc.target.name /][arc.getWeight()/] [/for]
+[/template]
+
+[template public getWeight(arc : Arc)]
+[if(arc.type=ArcType::readArc)]?[arc.weight/][elseif(arc.weight>1)]*[arc.weight/][/if]
+[/template]

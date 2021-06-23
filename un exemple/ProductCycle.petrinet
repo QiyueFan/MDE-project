@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ASCII"?>
+<petrinet:petriNetwork xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:petrinet="http://petrinet" name="ProductCycle">
+  <elements xsi:type="petrinet:place" outgoings="//@elements.6" name="ProductDesign_NotStarted" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.7" outgoings="//@elements.88 //@elements.97" name="ProductDesign_Started"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.8" outgoings="//@elements.9" name="ProductDesign_InProgress"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.10" outgoings="//@elements.89 //@elements.90" name="ProductDesign_Finished"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.6 //@elements.108" outgoings="//@elements.7 //@elements.8" name="Start_ProductDesign"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.9" outgoings="//@elements.10 //@elements.109" name="Finish_ProductDesign"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.0" target="//@elements.4" name="ProductDesign_NotStarted -> Start_ProductDesign"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.4" target="//@elements.1" name="Start_ProductDesign -> ProductDesign_Started"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.4" target="//@elements.2" name="Start_ProductDesign -> ProductDesign_InProgress"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.2" target="//@elements.5" name="ProductDesign_InProgress -> Finish_ProductDesign"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.5" target="//@elements.3" name="Finish_ProductDesign -> ProductDesign_Finished"/>
+  <elements xsi:type="petrinet:place" outgoings="//@elements.17" name="UIUX_NotStarted" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.18" outgoings="//@elements.91" name="UIUX_Started"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.19" outgoings="//@elements.20" name="UIUX_InProgress"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.21" name="UIUX_Finished"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.17 //@elements.88 //@elements.110" outgoings="//@elements.18 //@elements.19" name="Start_UIUX"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.20" outgoings="//@elements.21 //@elements.111" name="Finish_UIUX"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.11" target="//@elements.15" name="UIUX_NotStarted -> Start_UIUX"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.15" target="//@elements.12" name="Start_UIUX -> UIUX_Started"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.15" target="//@elements.13" name="Start_UIUX -> UIUX_InProgress"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.13" target="//@elements.16" name="UIUX_InProgress -> Finish_UIUX"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.16" target="//@elements.14" name="Finish_UIUX -> UIUX_Finished"/>
+  <elements xsi:type="petrinet:place" outgoings="//@elements.28" name="FrontEndDev_NotStarted" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.29" outgoings="//@elements.94" name="FrontEndDev_Started"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.30" outgoings="//@elements.31" name="FrontEndDev_InProgress"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.32" outgoings="//@elements.95" name="FrontEndDev_Finished"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.28 //@elements.90 //@elements.91 //@elements.112" outgoings="//@elements.29 //@elements.30" name="Start_FrontEndDev"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.31" outgoings="//@elements.32 //@elements.113" name="Finish_FrontEndDev"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.22" target="//@elements.26" name="FrontEndDev_NotStarted -> Start_FrontEndDev"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.26" target="//@elements.23" name="Start_FrontEndDev -> FrontEndDev_Started"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.26" target="//@elements.24" name="Start_FrontEndDev -> FrontEndDev_InProgress"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.24" target="//@elements.27" name="FrontEndDev_InProgress -> Finish_FrontEndDev"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.27" target="//@elements.25" name="Finish_FrontEndDev -> FrontEndDev_Finished"/>
+  <elements xsi:type="petrinet:place" outgoings="//@elements.39" name="BackEndDev_NotStarted" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.40" outgoings="//@elements.92" name="BackEndDev_Started"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.41" outgoings="//@elements.42" name="BackEndDev_InProgress"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.43" outgoings="//@elements.93" name="BackEndDev_Finished"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.39 //@elements.89 //@elements.114" outgoings="//@elements.40 //@elements.41" name="Start_BackEndDev"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.42" outgoings="//@elements.43 //@elements.115" name="Finish_BackEndDev"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.33" target="//@elements.37" name="BackEndDev_NotStarted -> Start_BackEndDev"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.37" target="//@elements.34" name="Start_BackEndDev -> BackEndDev_Started"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.37" target="//@elements.35" name="Start_BackEndDev -> BackEndDev_InProgress"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.35" target="//@elements.38" name="BackEndDev_InProgress -> Finish_BackEndDev"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.38" target="//@elements.36" name="Finish_BackEndDev -> BackEndDev_Finished"/>
+  <elements xsi:type="petrinet:place" outgoings="//@elements.50" name="Test_NotStarted" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.51" outgoings="//@elements.96" name="Test_Started"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.52" outgoings="//@elements.53" name="Test_InProgress"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.54" outgoings="//@elements.98" name="Test_Finished"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.50 //@elements.92 //@elements.94 //@elements.116 //@elements.118" outgoings="//@elements.51 //@elements.52" name="Start_Test"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.53 //@elements.93 //@elements.95" outgoings="//@elements.54 //@elements.117 //@elements.119" name="Finish_Test"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.44" target="//@elements.48" name="Test_NotStarted -> Start_Test"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.48" target="//@elements.45" name="Start_Test -> Test_Started"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.48" target="//@elements.46" name="Start_Test -> Test_InProgress"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.46" target="//@elements.49" name="Test_InProgress -> Finish_Test"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.49" target="//@elements.47" name="Finish_Test -> Test_Finished"/>
+  <elements xsi:type="petrinet:place" outgoings="//@elements.61" name="ProductLauch_NotStarted" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.62" outgoings="//@elements.99" name="ProductLauch_Started"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.63" outgoings="//@elements.64" name="ProductLauch_InProgress"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.65" name="ProductLauch_Finished"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.61 //@elements.98 //@elements.120" outgoings="//@elements.62 //@elements.63" name="Start_ProductLauch"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.64" outgoings="//@elements.65 //@elements.121" name="Finish_ProductLauch"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.55" target="//@elements.59" name="ProductLauch_NotStarted -> Start_ProductLauch"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.59" target="//@elements.56" name="Start_ProductLauch -> ProductLauch_Started"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.59" target="//@elements.57" name="Start_ProductLauch -> ProductLauch_InProgress"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.57" target="//@elements.60" name="ProductLauch_InProgress -> Finish_ProductLauch"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.60" target="//@elements.58" name="Finish_ProductLauch -> ProductLauch_Finished"/>
+  <elements xsi:type="petrinet:place" outgoings="//@elements.72" name="Doc_NotStarted" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.73" name="Doc_Started"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.74" outgoings="//@elements.75" name="Doc_InProgress"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.76" name="Doc_Finished"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.72 //@elements.96 //@elements.97 //@elements.122 //@elements.124" outgoings="//@elements.73 //@elements.74" name="Start_Doc"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.75" outgoings="//@elements.76 //@elements.123 //@elements.125" name="Finish_Doc"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.66" target="//@elements.70" name="Doc_NotStarted -> Start_Doc"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.70" target="//@elements.67" name="Start_Doc -> Doc_Started"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.70" target="//@elements.68" name="Start_Doc -> Doc_InProgress"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.68" target="//@elements.71" name="Doc_InProgress -> Finish_Doc"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.71" target="//@elements.69" name="Finish_Doc -> Doc_Finished"/>
+  <elements xsi:type="petrinet:place" outgoings="//@elements.83" name="Ops_NotStarted" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.84" name="Ops_Started"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.85" outgoings="//@elements.86" name="Ops_InProgress"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.87" name="Ops_Finished"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.83 //@elements.99 //@elements.126" outgoings="//@elements.84 //@elements.85" name="Start_Ops"/>
+  <elements xsi:type="petrinet:Transition" incomings="//@elements.86" outgoings="//@elements.87 //@elements.127" name="Finish_Ops"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.77" target="//@elements.81" name="Ops_NotStarted -> Start_Ops"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.81" target="//@elements.78" name="Start_Ops -> Ops_Started"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.81" target="//@elements.79" name="Start_Ops -> Ops_InProgress"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.79" target="//@elements.82" name="Ops_InProgress -> Finish_Ops"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.82" target="//@elements.80" name="Finish_Ops -> Ops_Finished"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.1" target="//@elements.15" type="readArc" name="ProductDesign_Started -> Start_UIUX"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.3" target="//@elements.37" type="readArc" name="ProductDesign_Finished -> Start_BackEndDev"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.3" target="//@elements.26" type="readArc" name="ProductDesign_Finished -> Start_FrontEndDev"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.12" target="//@elements.26" type="readArc" name="UIUX_Started -> Start_FrontEndDev"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.34" target="//@elements.48" type="readArc" name="BackEndDev_Started -> Start_Test"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.36" target="//@elements.49" type="readArc" name="BackEndDev_Finished -> Finish_Test"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.23" target="//@elements.48" type="readArc" name="FrontEndDev_Started -> Start_Test"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.25" target="//@elements.49" type="readArc" name="FrontEndDev_Finished -> Finish_Test"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.45" target="//@elements.70" type="readArc" name="Test_Started -> Start_Doc"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.1" target="//@elements.70" type="readArc" name="ProductDesign_Started -> Start_Doc"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.47" target="//@elements.59" type="readArc" name="Test_Finished -> Start_ProductLauch"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.56" target="//@elements.81" type="readArc" name="ProductLauch_Started -> Start_Ops"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.109 //@elements.119 //@elements.123" outgoings="//@elements.108 //@elements.118 //@elements.122" name="concepteur" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.115" outgoings="//@elements.114" name="developpeur" TokenNb="2"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.117 //@elements.125" outgoings="//@elements.116 //@elements.124" name="testeur" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" name="redacteur" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" name="machine" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.111" outgoings="//@elements.110" name="GraphicDesigner" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.121 //@elements.127" outgoings="//@elements.120 //@elements.126" name="OpsEngineer" TokenNb="1"/>
+  <elements xsi:type="petrinet:place" incomings="//@elements.113" outgoings="//@elements.112" name="DevFrontEnd" TokenNb="2"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.100" target="//@elements.4" name="concepteur -> Start_ProductDesign"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.5" target="//@elements.100" name="Finish_ProductDesign -> concepteur"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.105" target="//@elements.15" name="GraphicDesigner -> Start_UIUX"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.16" target="//@elements.105" name="Finish_UIUX -> GraphicDesigner"/>
+  <elements xsi:type="petrinet:Arc" weight="2" source="//@elements.107" target="//@elements.26" name="DevFrontEnd -> Start_FrontEndDev"/>
+  <elements xsi:type="petrinet:Arc" weight="2" source="//@elements.27" target="//@elements.107" name="Finish_FrontEndDev -> DevFrontEnd"/>
+  <elements xsi:type="petrinet:Arc" weight="2" source="//@elements.101" target="//@elements.37" name="developpeur -> Start_BackEndDev"/>
+  <elements xsi:type="petrinet:Arc" weight="2" source="//@elements.38" target="//@elements.101" name="Finish_BackEndDev -> developpeur"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.102" target="//@elements.48" name="testeur -> Start_Test"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.49" target="//@elements.102" name="Finish_Test -> testeur"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.100" target="//@elements.48" name="concepteur -> Start_Test"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.49" target="//@elements.100" name="Finish_Test -> concepteur"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.106" target="//@elements.59" name="OpsEngineer -> Start_ProductLauch"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.60" target="//@elements.106" name="Finish_ProductLauch -> OpsEngineer"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.100" target="//@elements.70" name="concepteur -> Start_Doc"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.71" target="//@elements.100" name="Finish_Doc -> concepteur"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.102" target="//@elements.70" name="testeur -> Start_Doc"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.71" target="//@elements.102" name="Finish_Doc -> testeur"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.106" target="//@elements.81" name="OpsEngineer -> Start_Ops"/>
+  <elements xsi:type="petrinet:Arc" weight="1" source="//@elements.82" target="//@elements.106" name="Finish_Ops -> OpsEngineer"/>
+</petrinet:petriNetwork>

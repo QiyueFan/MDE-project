@@ -1,0 +1,10 @@
+
+op finished =  Conception_Finished /\ RedactionDoc_Finished /\ Developpement_Finished /\ RedactionTest_Finished;
+
+[] (finished => dead);
+[](Conception_NotStarted + Conception_Finished + Conception_InProgress = 1);
+[](RedactionDoc_NotStarted + RedactionDoc_Finished + RedactionDoc_InProgress = 1);
+[](Developpement_NotStarted + Developpement_Finished + Developpement_InProgress = 1);
+[](RedactionTest_NotStarted + RedactionTest_Finished + RedactionTest_InProgress = 1);
+
+

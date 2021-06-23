@@ -1,0 +1,7 @@
+
+op finished =  ProductDesign_Finished /\ UIUX_Finished /\ BackEndDev_Finished /\ FrontEndDev_Finished /\ Test_Finished /\ Doc_Finished /\ Ops_Finished /\ ProductLauch_Finished;
+
+[] (finished => dead);
+[] <> dead;
+[] (dead => finished);
+- <> finished;

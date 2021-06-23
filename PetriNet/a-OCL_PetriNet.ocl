@@ -1,0 +1,44 @@
+import 'PetriNet.ecore'
+
+package petrinet
+
+context petriNetwork
+inv warningSeverity: false
+inv withMessage('Explicit message in process ' + self.name + ' (withMessage)'): false
+inv errorSeverity: null
+
+
+context petriNetwork
+inv nameEmpty('The name of the petriNetwork is empty.'): 
+	self.name <> ''
+inv nameLength('The name of the petriNetwork must be more than 2 characters.'):
+	self.name.size() > 2
+inv nameFormat('The name of the petriNetwork is invalid.'): 
+	self.name.matches('[A-Za-z_][A-Za-z0-9_]*')
+	
+context Node
+inv nameEmpty('The name of the Node is empty.'): 
+	self.name <> ''
+inv uniqueNames('Two different Nodes cannot have the same name.'): 
+	self.petriNetwork.elements
+	-> select(node | node.oclIsKindOf(Node))
+	-> collect(node | node.oclAsType(Node))
+	-> forAll(n | self = n or self.name <> n.name)
+inv inCorrect('The incoming arcs are not correct: ' + self.name):
+	self.incomings -> size() = 0 or self.incomings -> forAll(i | i.target = self)
+inv outCorrect('The outgoing arcs are not correct: ' + self.name):
+	self.outgoings -> size() = 0 or self.outgoings -> forAll(i | i.source = self)
+
+context place
+inv positiveToken('The number of tokens must be positive: '+self.name):
+	self.TokenNb >= 0
+	
+context Arc
+inv nameEmpty('The name of the Arc is empty.'): 
+	self.name <> ''
+inv weightGreater('The weight of arc must be greater than 1: ' + self.name):
+	self.weight >= 1
+inv correctLink('The arc must link places with Transitions : ' + self.name):
+	(self.source.oclIsTypeOf(place) implies self.target.oclIsTypeOf(Transition)) and (self.source.oclIsTypeOf(Transition) implies self.target.oclIsTypeOf(place))
+
+endpackage

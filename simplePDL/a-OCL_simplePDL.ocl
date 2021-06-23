@@ -1,0 +1,57 @@
+import 'SimplePDL.ecore'
+
+package simplepdl
+
+context Process
+inv warningSeverity: false
+inv withMessage('Explicit message in process ' + self.name + ' (withMessage)'): false
+inv errorSeverity: null
+
+context Process
+inv nameEmpty('The name of the process is empty.'): 
+	self.name <> ''
+inv nameLength('The name of the procee must be more than 2 characters.'):
+	self.name.size() > 2
+inv nameFormat('The name of the process is invalid.'): 
+	self.name.matches('[A-Za-z_][A-Za-z0-9_]*')
+
+context ProcessElement
+def: process(): Process =
+	Process.allInstances()
+		->select(p | p.processElements->includes(self))
+		->asSequence()->first()	
+	
+context WorkSequence
+inv successorAndPredecessorInSameProcess('Activities not in the same process : '
+		+ self.predecessor.name + ' in ' + self.predecessor.process().name+ ' and '
+		+ self.successor.name + ' in ' + self.successor.process().name
+):
+	self.process() = self.successor.process()
+	and self.process() = self.predecessor.process()
+inv notReflexive('WorkSequence can not be reflexive.'):
+	self.predecessor <> self.successor
+	
+context WorkDefinition
+def: wd(): WorkDefinition =
+	WorkDefinition.allInstances()
+		-> select(wd | wd->includes(self))
+		-> asSequence()->first()
+inv hasName('The name of the WorkDefiniton is empty.'): 
+	self.name <> ''
+inv uniqueName('Two different WorkDefinitions cannot have the same name.'): 
+self.Process.processElements
+	-> select(processelement | processelement.oclIsKindOf(WorkDefinition))
+	-> collect(processelement | processelement.oclAsType(WorkDefinition))
+	-> forAll(w | self = w or self.name <> w.name)
+
+context Resource
+inv resourceNotNegative('Negative resources.'):
+	self.num >= 0
+
+context ResourceSequence
+inv enoughResource('The Resource is not enough: ' + self.resource.resourcetype.toString()):
+	self.weight <= self.resource.num
+inv correctWD('The workdefinition is not correct: '+ self.workdefinition.name):
+	self.workdefinition.name.matches(self.workdefinition.wd().name)
+
+endpackage
